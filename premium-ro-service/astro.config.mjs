@@ -1,17 +1,17 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel'; // ⭐ Sahi import
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://roservicesupport.co.in',
+  site: 'https://premium-ro-service.vercel.app', // Apna site URL yahan daalein
   integrations: [sitemap()],
-  output: 'server', // ⭐ API route aur SSR ke liye zaroori
-  adapter: vercel(), // ⭐ Vercel adapter
+  output: 'server',
+  adapter: vercel(),
   devToolbar: {
     enabled: false
   },
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'always' // ⭐ CSS inline karne ke liye
   }
 });
