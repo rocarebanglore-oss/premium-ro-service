@@ -31,8 +31,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
     </noscript>
     
-    <!-- Hero Image preload for LCP -->
-    <link rel="preload" as="image" href="/background.webp" />
+    <!-- ⭐ Hero Image preload with fetchpriority -->
+    <link rel="preload" as="image" href="/background.webp" fetchpriority="high" />
 
     <!-- ⭐ GOOGLE TAG (gtag.js) - YAHAN NAYI WEBSITE KI AW-ID DAALO -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-NAYA_ID_YAHAN"></script>
