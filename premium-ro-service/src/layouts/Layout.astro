@@ -34,13 +34,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- ⭐ Hero Image preload with fetchpriority -->
     <link rel="preload" as="image" href="/background.webp" fetchpriority="high" />
 
-    <!-- ⭐ GOOGLE TAG (gtag.js) - YAHAN NAYI WEBSITE KI AW-ID DAALO -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-NAYA_ID_YAHAN"></script>
+    <!-- ⭐ SMART GOOGLE TAG (Lazy Loaded for Speed) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      // ⚠️ YAHAN ASLI AW-ID DAALO (AW-NAYA_ID_YAHAN ko hatao)
       gtag('config', 'AW-NAYA_ID_YAHAN');
+
+      // Page load hone ke baad Google Tag load hoga (LCP improve karne ke liye)
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-NAYA_ID_YAHAN'; // Yahan bhi ID badalna
+          document.head.appendChild(script);
+        }, 2000); // 2 second delay
+      });
     </script>
 
     <!-- ⭐ DEVICE GUARD TRACKING SCRIPT (Multi-Page Smart Block) -->
@@ -118,14 +128,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               .then(function(data) {
                 if (data.blocked === true) { 
                   window.WM_BLOCKED = true; 
-                  // ⭐ Block status ko save kar lo taaki dusre pages par bhi yaad rahe
                   localStorage.setItem('wm_device_blocked', 'true'); 
                 }
               })
               .catch(function() {});
             }
           })();
-        }, 1000); // 1 second delay
+        }, 1500); 
       });
     </script>
 
@@ -274,6 +283,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               return false;
             }
             if (link.href.startsWith('tel:') && typeof gtag === 'function') {
+              // ⚠️ Yahan bhi ASLI ID aur LABEL daalna
               gtag('event', 'conversion', { 'send_to': 'AW-NAYA_ID_YAHAN/NAYA_LABEL_YAHAN' });
             }
           });
