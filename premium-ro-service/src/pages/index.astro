@@ -89,14 +89,14 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div class="service-image-wrapper">
-        <!-- 🔥 PERFECT IMAGE OPTIMIZATION 🔥 -->
+        <!-- 🔥 Image Optimization Fixed (fetchpriority) 🔥 -->
         <img 
           src="/technician.webp" 
           alt="Certified RO Technician repairing water purifier" 
           class="service-img" 
-          loading="lazy" 
           width="800" 
           height="400" 
+          fetchpriority="high"
         />
       </div>
 
@@ -393,6 +393,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script is:inline>
+  // ===== FORM SUBMIT + CONVERSION TRACKING =====
   const phoneInput = document.getElementById('phoneInput');
   phoneInput.addEventListener('input', function (e) {
     this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
@@ -401,7 +402,7 @@ import Layout from "../layouts/Layout.astro";
   document.getElementById('serviceForm').addEventListener('submit', async function(e) {
     e.preventDefault(); 
     
-    // ⭐ CONVERSION BLOCK CHECK (Nayi Website)
+    // ⭐ CONVERSION BLOCK CHECK
     if (window.WM_BLOCKED === true) {
       alert('Access Restricted');
       return false;
@@ -435,7 +436,7 @@ import Layout from "../layouts/Layout.astro";
       });
 
       if (response.ok) {
-        // ⭐ GOOGLE ADS CONVERSION EVENT
+        // ⭐ GOOGLE ADS CONVERSION EVENT (Label baad mein daalna)
         if (typeof gtag === 'function') {
           gtag('event', 'conversion', { 'send_to': 'AW-NAYA_ID_YAHAN/NAYA_LABEL_YAHAN' });
         }
