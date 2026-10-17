@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Our Services | Premium RO Service">
+  <section class="page-head">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Installation, repair, AMC, and filter replacement — all under one roof.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="service-list">
+        <article class="service-item">
+          <h2>RO Installation</h2>
+          <p class="content-text">
+            Proper installation is the difference between an RO that lasts for years and one that fails within months. We check your inlet water pressure, install the purifier with correct fittings, flush the system, and calibrate the TDS output before handing it over. You get a demonstration of filter change timings and a written installation report.
+          </p>
+        </article>
+
+        <article class="service-item">
+          <h2>RO Repair</h2>
+          <p class="content-text">
+            Common problems like low water flow, continuous motor running, unusual taste, leakage, or a blinking indicator are diagnosed on-site by our experts. We carry standard spare parts so most repairs are completed in a single visit. If a specific part needs ordering, you get a clear timeline upfront — no vague answers.
+          </p>
+        </article>
+
+        <article class="service-item">
+          <h2>AMC Plans</h2>
+          <p class="content-text">
+            Our annual maintenance plans include scheduled filter and membrane checks, priority response for breakdowns, and discounted spare parts. You don't need to track filter life yourself — we remind you, schedule the visit, and keep your water safe year-round.
+          </p>
+        </article>
+
+        <article class="service-item">
+          <h2>Filter & Membrane Replacement</h2>
+          <p class="content-text">
+            We use genuine replacement filters matched exactly to your purifier model. After replacement, the system is flushed, TDS is tested again, and the old parts are shown to you before disposal. Every replacement carries a service warranty.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-head {
+    background: #0f3b5f;
+    color: white;
+    padding: 60px 0;
+  }
+  .page-head h1 { font-size: 2.5rem; margin-bottom: 8px; }
+  .page-head p { color: #bae6fd; font-size: 1.1rem; text-align: left; }
+
+  .section { padding: 60px 0; }
+  .service-list { max-width: 800px; margin: 0 auto; }
+
+  .service-item {
+    padding: 32px 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-item h2 { color: #0c4a6e; margin-bottom: 16px; font-size: 1.5rem; }
+</style>

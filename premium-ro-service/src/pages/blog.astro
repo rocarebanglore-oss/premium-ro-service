@@ -1,0 +1,150 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="RO Service Blog | Tips & Maintenance Guides">
+  <section class="blog-hero">
+    <div class="container">
+      <h1>RO Service Blog</h1>
+      <p>Expert tips, maintenance guides, and the latest news on water purification.</p>
+    </div>
+  </section>
+
+  <section class="blog-list-section">
+    <div class="container">
+      <div class="blog-grid">
+        
+        <!-- Blog Post 1 -->
+        <article class="blog-card">
+          <div class="blog-image-placeholder">💧</div>
+          <div class="blog-content">
+            <span class="blog-date">Oct 15, 2026</span>
+            <h2>How to Maintain Your RO Purifier in Bangalore's Hard Water?</h2>
+            <p>Bangalore's water is often hard and contains high TDS. Learn the simple steps to keep your RO running smoothly and safe.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-card">
+          <div class="blog-image-placeholder">🔧</div>
+          <div class="blog-content">
+            <span class="blog-date">Oct 10, 2026</span>
+            <h2>Signs Your RO Membrane Needs Replacement</h2>
+            <p>Is your water purifier taking too long to fill? Or is the water tasting different? It might be time for a membrane change.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-card">
+          <div class="blog-image-placeholder">🛡️</div>
+          <div class="blog-content">
+            <span class="blog-date">Oct 05, 2026</span>
+            <h2>Why AMC is Important for Your Water Purifier</h2>
+            <p>Annual Maintenance Contracts (AMC) save you from sudden breakdowns and expensive repairs. Here is why you need one.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .blog-hero {
+    background: #0f172a;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  }
+  .blog-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .blog-hero p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+  }
+
+  .blog-list-section {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .blog-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+  }
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+
+  .blog-image-placeholder {
+    height: 180px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+  }
+
+  .blog-content {
+    padding: 24px;
+  }
+
+  .blog-date {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .blog-content h2 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin: 10px 0;
+    line-height: 1.4;
+  }
+
+  .blog-content p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .read-more {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .read-more:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 992px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-hero h1 { font-size: 2rem; }
+  }
+</style>
